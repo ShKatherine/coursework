@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Посмотреть комментарии к коду</title>
+</head>
+<body>
+<div align="center">
+    <h1>Список</h1>
+    <div class="wrapper__container">
+        <form action="#" th:action="@{/comExit}">
+            <input class="btn" type="submit" value="Назад">
+        </form>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Название документа</th>
+            <th>Язык</th>
+            <th>Комментарии</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="comment: ${commentList}">
+            <td th:text="${comment.code.document}">Название</td>
+            <td th:text="${comment.code.language}">Язык</td>
+            <td th:text="${comment.com}">Комментарии</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Roboto;
+        }
+
+        body {
+            background-color: #EDEAE5;
+        }
+
+        .wrapper {
+            position: relative;
+            left: 0%;
+        }
+
+        .btn {
+            cursor: pointer;
+            background-color: #8039C3;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+    </style>
+</body>
+</html>

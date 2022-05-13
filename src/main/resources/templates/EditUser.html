@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <title>Изменение</title>
+</head>
+<body>
+<div class="wrapper" align="center">
+  <h1>Изменение данных пользователя</h1>
+  <br />
+  <form action="#" th:action="@{/saveUser}" th:object="${user}"
+        method="post">
+
+    <table class="table" border="0" cellpadding="10">
+      <tr>
+        <td>ID пользователя:</td>
+        <td><input type="text" th:field="${user.programmer.idP}" readonly/></td>
+      </tr>
+      <tr>
+        <td>Адрес почты:</td>
+        <td>
+          <input type="email" th:field="${user.emailU}" />
+        </td>
+      </tr>
+      <tr>
+        <td>Пароль:</td>
+        <td><input type="text" th:field="${user.passwordU}" /></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>Роль:</td>
+        <td><input type="text" th:field="${user.programmer.position}" readonly/></td>
+      </tr>
+      <input type="hidden" th:field="${user.idU}">
+      <tr>
+        <td>Имя:</td>
+        <td><input type="text" th:field="${user.programmer.nameP}" /></td>
+      </tr>
+      <tr>
+        <td>Фамилия:</td>
+        <td><input type="text" th:field="${user.programmer.surnameP}" /></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><button class="btn" type="submit">Сохранить изменения</button> </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<style>
+              @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+              *{
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+              }
+
+              html {
+                  font-family: Roboto;
+              }
+
+              body {
+                  background-color: #EDEAE5;
+              }
+
+              input {
+                width: 80%;
+                margin-bottom: 5%;
+                margin-left: 5%;
+                height: 3vh;
+              }
+
+              button[type="submit"] {
+                margin-top: 5%;
+                margin-left: -10%;
+              }
+
+              .table {
+                width: 35%
+              }
+
+              .wrapper__title {
+                  margin-bottom: 3%;
+                  font-family: Roboto;
+                  font-size: 2rem;
+                  font-weight: bold;
+              }
+
+              .wrapper {
+                  width: 80%;
+                  position: absolute;
+                  left: 10%;
+                  top: 15%;
+              }
+
+              .wrapper__container {
+                  width: 85%;
+              }
+
+              .col-4 {
+                  font-family: Roboto;
+                  font-size: 1em;
+              }
+
+              .btn {
+                  cursor: pointer;
+                  width: 100%;
+                  position: relative;
+                  left: 7%;
+                  background-color: #86C232;
+                  border: none;
+                  color: white;
+                  padding: 15px 32px;
+                  margin: 5px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 1.1em;
+              }
+
+              .exit {
+                  margin-top: 10%;
+                  background-color: rgba(128, 128, 128);
+              }
+
+              .btn:hover {
+                  transform: scale(1.05);
+                  opacity: .9;
+              }
+        </style>
+</body>
+</html>

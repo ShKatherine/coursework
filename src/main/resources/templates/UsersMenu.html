@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UserMenu</title>
+</head>
+<body>
+<div class="wrapper">
+    <h2 class="wrapper__title">Меню пользователя</h2>
+    <div class="wrapper__container">
+        <form action="#" th:action="@{/down}">
+            <input class="btn" type="submit" value="Загрузить файл с кодом">
+        </form>
+        <form action="#" th:action="@{/TableForReview}" >
+            <input class="btn" type="submit" value="Ревьюить код">
+        </form>
+        <form action="#" th:action="@{/SeeComment}">
+            <input class="btn" type="submit" value="Посмотреть комментарии к кодам">
+        </form>
+        <form action="#" th:action="@{/sortU}">
+            <input class="btn" type="submit" value="Сортировка кода по дате">
+        </form>
+        <form action="#" th:action="@{/filter}">
+            <input class="btn" type="submit" value="Фильтрация кода">
+        </form>
+        <form action="#" th:action="@{/meet}">
+            <input class="btn" type="submit" value="Назначить встречу">
+        </form>
+        <form action="#" th:action="@{/allMeet}">
+            <input class="btn" type="submit" value="Страница объявлений">
+        </form>
+        <form th:action="@{/exit}">
+            <input class="btn exit" type="submit" value="Выйти"/>
+        </form>
+    </div>
+</div>
+
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Roboto;
+        }
+
+        body {
+            background-color: #EDEAE5;
+        }
+
+        .wrapper__title {
+            margin-bottom: 7%;
+            margin-left: 5%;
+            font-family: Roboto;
+            font-size: 2rem;
+            font-weight: bold;
+
+        }
+
+        .wrapper {
+            width: 30%;
+            position: absolute;
+            left: 37%;
+            top: 2%;
+        }
+
+        .wrapper__container {
+            width: 100%;
+        }
+
+        .btn {
+            cursor: pointer;
+            width: 100%;
+            background-color: #8039C3;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+
+        .exit {
+            margin-top: 10%;
+            background-color: rgba(128, 128, 128);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+    </style>
+</body>
+
+</html>

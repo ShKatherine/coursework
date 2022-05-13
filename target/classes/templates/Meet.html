@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Оставить объявление </title>
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="wrapper__container">
+        <form action="#" th:action="@{/saveMes}" th:object="${meeting}" method="post">
+            <h2 class="wrapper__title">Оставить обьявление</h2>
+            <p><textarea th:field="${meeting.mess}" rows="10" cols="45" name="text" required minlength="1"></textarea></p>
+            <input class="btn" type="submit" value="ОК">
+
+        </form>
+    </div>
+</div>
+</div>
+
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Roboto;
+        }
+
+        body {
+            background-color: #EDEAE5;
+        }
+
+        .wrapper__title {
+            margin-bottom: 1%;
+            margin-left: 0%;
+            font-family: Roboto;
+            font-size: 2rem;
+            font-weight: bold;
+
+        }
+
+        .wrapper {
+            width: 70%;
+            position: absolute;
+            left: 35%;
+            top: 30%;
+
+        }
+
+        .wrapper__container {
+            width: 100%;
+        }
+        pre {
+            white-space: pre-wrap;
+        }
+
+        .btn {
+            cursor: pointer;
+            width: 10%;
+            background-color: #8039C3;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1em;
+
+        }
+
+        .exit {
+            margin-top: 10%;
+            background-color: rgba(128, 128, 128);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+
+        input[type='text']{
+              height: 400px;
+              width:500px;
+              font-size: 14px;
+
+        }
+
+        select {
+            width: 300px; /* Ширина списка в пикселах */
+            height: 30px;
+        }
+        .layer {
+            overflow: scroll; /* Добавляем полосы прокрутки */
+            width: 600px; /* Ширина блока */
+            height: 300px; /* Высота блока */
+            padding: 5px; /* Поля вокруг текста */
+            border: solid 1px black; /* Параметры рамки */
+           }
+    </style>
+
+
+</body>
+</html>

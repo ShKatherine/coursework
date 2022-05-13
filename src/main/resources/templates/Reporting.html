@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Отчётность</title>
+</head>
+<body>
+<div class="wrapper" align="center">
+    <h1>Отчётность</h1>
+    <div class="wrapper__container">
+        <form action="#" th:action="@{/repExit}">
+            <input class="btn" type="submit" value="Назад">
+        </form>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Позиция</th>
+            <th>ID кода</th>
+            <th>Название файла </th>
+            <th>Дата</th>
+            <th>Язык</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="code: ${codeList}">
+            <td th:text="${code.programmer.nameP}">Имя</td>
+            <td th:text="${code.programmer.surnameP}">Фамилия</td>
+            <td th:text="${code.programmer.position}">Позиция</td>
+            <td th:text="${code.idCode}">ID</td>
+            <td th:text="${code.document}">Название файла</td>
+            <td th:text="${code.date}">Дата</td>
+            <td th:text="${code.language}">Язык</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Roboto;
+        }
+
+        body {
+            background-color: #EDEAE5;
+        }
+
+        .wrapper {
+            position: relative;
+            left: 0%;
+        }
+
+        .btn {
+            cursor: pointer;
+            background-color: #86C232;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+    </style>
+</body>
+</html>

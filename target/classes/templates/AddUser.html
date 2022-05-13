@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавлние пользователя</title>
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <h1 class="wrapper__title">Добавление программиста-пользователя</h1>
+    </div>
+    <form action="#" th:action="@{/addUser}" th:object="${user}"
+          method="post" style="max-width: 600px; margin: 0 auto;">
+        <div class="m-3" th:object="${programmer}">
+            <div class="form-group row">
+                <div class="alert" th:if="${message}" th:text="${message}"></div>
+                <label class="col-4 col-form-label">E-mail: </label>
+                <div class="col-8">
+                    <input type="email" th:field="${user.emailU}" class="form-control" required minlength="5" maxlength="30"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Пароль: </label>
+                <div class="col-8">
+                    <input type="password" th:field="${user.passwordU}" class="form-control"
+                           required minlength="6" maxlength="20"/>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Имя: </label>
+                <div class="col-8">
+                    <input type="text" th:field="${programmer.nameP}" class="form-control"
+                           required minlength="1" maxlength="25"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Фамилия: </label>
+                <div class="col-8">
+                    <input type="text" th:field="${programmer.surnameP}" class="form-control"
+                           required minlength="1" maxlength="25"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Позиция: </label>
+                <div class="col-8">
+                    <select th:field="${programmer.position}" required>
+                        <option th:value="'Junior'">Junior</option>
+                        <option th:value="'Middle'">Middle</option>
+                        <option th:value="'Senior'">Senior</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div >
+                <button class="btn" type="submit">Добавить</button>
+            </div>
+        </div>
+    </form>
+</div>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Roboto;
+        }
+
+        body {
+            background-color: #EDEAE5;
+        }
+
+
+        .form-control {
+            height: 4vh;
+            border: none;
+            outline: none;
+            width: 80%;
+            position: relative;
+            margin-bottom: 3%;
+        }
+
+        .wrapper__title {
+            margin-bottom: 1%;
+            font-family: Roboto;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 20%;
+            position: absolute;
+            top: -15%;
+            left:-3%;
+
+        }
+
+        .container {
+            width: 80%;
+            position: absolute;
+            left: 13%;
+            top: 20%;
+
+        }
+
+        .wrapper__container {
+            width: 85%;
+        }
+
+        .m-3 {
+          margin-left: 7%;
+        }
+
+        .col-4 {
+            font-family: Roboto;
+            font-size: 1em;
+
+        }
+
+        .btn {
+            cursor: pointer;
+            width: 60%;
+            position: relative;
+            left: 7%;
+            background-color: #86C232;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+
+        .exit {
+            margin-top: 10%;
+            background-color: rgba(128, 128, 128);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+    </style>
+<style>
+   select {
+    width: 300px; /* Ширина списка в пикселах */
+    height: 30px;
+   }
+  </style>
+</body>
+</html>

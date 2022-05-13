@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Загрузить код</title>
+</head>
+<body>
+<div class="flex-container">
+
+    <div class="header">
+        <div class="container">
+            <div class="header-wrap">
+                <div class="page-name">
+                    <h2 class="ax">Загрузить код</h2>
+                </div>
+                <div class="tit">
+                    <h2 class="title"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <form action="#" th:action="@{/addCode}" th:object="${code}"  method="post">
+            <div class="div_form" th:object="${requires}">
+                <div class="group">
+                    <div class="alert" th:if="${message}" th:text="${message}"></div>
+                    <label class="form-label">Код: </label>
+                    <div class="inp">
+                        <input type="text" placeholder="Пример - Page.html" th:field="${code.document}" class="form-control" maxlength="60"/>
+                    </div>
+                </div>
+                <div class="group">
+                    <label class="form-label">Язык: </label>
+                    <div class="inp">
+                        <input type="text" placeholder="Пример - Java" th:field="${code.language}" class="form-control"/>
+                    </div>
+                </div>
+                <div class="group">
+                    <label class="form-label">Требования: </label>
+                    <div class="inp">
+                        <input type="text" placeholder="Пример - Order.txt" th:field="${requires.req}" class="form-control"/>
+                    </div>
+                </div>
+
+
+                <div class="but">
+                    <button class="button" type="submit">ОК</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<style>
+     body, html{
+            font-family: Roboto;
+            color: #000000;
+            background-color: #EDEAE5;
+            margin: 0;
+            padding: 0;
+            position: relative;
+       }
+       .flex-container{
+            display: flex;
+            flex-direction: column;
+       }
+       .header{
+            color: RGB(30, 33, 61);
+            background-color:#EDEAE5;
+            margin: 0 auto;
+            width:100%
+       }
+       .header-wrap{
+            display: flex;
+            flex-direction: row;
+       }
+       .page-name{
+           margin-left: 45px;
+           margin-right: 10px;
+       }
+       .content{
+             position: absolute;
+             left:450px;
+             top:180px;
+       }
+        .form-control{
+            height: 40px;
+            width: 350px;
+            font-size: 15px;
+            outline: none;
+            border: none;
+            margin: 10px;
+        }
+        .but{
+            position: absolute;
+            left:90px;
+            bottom: -60px;
+        }
+        select{
+          position: absolute;
+           left:10px;
+            height: 40px;
+        }
+          .button{
+              background-color: #8039C3;
+              border: none;
+              color: RGB(20, 37, 50);
+              text-align: center;
+              font-size: 15px;
+              padding: 8px 30px;
+              margin: 5px;
+          }
+          .button:hover {
+              transform: scale(1.05);
+              background-color: RGB(127, 139, 161);
+              color: white;
+              box-shadow: 0 0 10px rgba(122,122,122,0.5);
+          }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Сортировка</title>
+</head>
+<body>
+<div class="wrapper" align="center">
+  <h1>Функции сортировки данных</h1>
+  <div class="wrapper__container">
+    <form action="#" th:action="@{/sortExitU}">
+      <input class="btn" type="submit" value="Назад">
+    </form>
+    <form action="#" th:action="@{/sortByDateU}">
+      <input class="btn" type="submit" value="Сортировка кода по убыванию даты">
+    </form>
+    <form action="#" th:action="@{/sortByDate2U}">
+      <input class="btn" type="submit" value="Сортировка кода по возрастанию даты">
+    </form>
+    <br/><br/>
+    <table class="table" border="1" cellpadding="10">
+      <thead>
+      <tr>
+        <th>Дата</th>
+        <th>Название документа</th>
+        <th>Язык</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="code : ${codeList}">
+        <td th:text="${code.date}">Дата</td>
+        <td th:text="${code.document}">Название документа</td>
+        <td th:text="${code.language}">Язык</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Roboto;
+        }
+
+        body {
+            background-color: #EDEAE5;
+        }
+
+        .wrapper__title {
+            margin-bottom: 3%;
+            margin-left: 5%;
+            font-family: Roboto;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .wrapper {
+            width: 30%;
+            position: absolute;
+            left: 33%;
+            top: 2%;
+        }
+
+        .wrapper__container {
+          position: relative;
+          left: -20%;
+        }
+
+        .btn {
+            cursor: pointer;
+            width: 100%;
+            background-color: #8039C3;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+        }
+
+        .table {
+          position: relative;
+          left: 20%;
+        }
+
+        .btn:not(.special) {
+          position: relative;
+          left: 20%;
+        }
+
+        .special {
+          width: 140%;
+        }
+
+        .exit {
+            margin-top: 10%;
+            background-color: rgba(128, 128, 128);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+    </style>
+</body>
+</html>

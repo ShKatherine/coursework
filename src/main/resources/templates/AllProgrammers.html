@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Все программисты</title>
+</head>
+<body>
+<div class="wrapper" align="center">
+    <h1>Все программисты</h1>
+    <div class="wrapper__container">
+        <form action="#" th:action="@{/allPExit}">
+            <input class="btn" type="submit" value="Назад">
+        </form>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Позиция</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="programmer: ${programmerList}">
+        <td th:text="${programmer.nameP}">Имя</td>
+        <td th:text="${programmer.surnameP}">Фамилия</td>
+        <td th:text="${programmer.position}">Позиция</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Roboto;
+        }
+
+        body {
+            background-color: #EDEAE5;
+        }
+
+        .wrapper {
+            position: relative;
+            left: 0%;
+        }
+
+        .btn {
+            cursor: pointer;
+            background-color: #86C232;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
+    </style>
+</body>
+</html>
